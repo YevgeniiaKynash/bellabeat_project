@@ -1,0 +1,324 @@
+---
+title: "procesing"
+author: "YEVGENIIA"
+date: "2024-09-23"
+output: html_document
+---
+
+## Procesing  
+
+**1. Instilling packages**
+
+packages <- c("tidyverse", "here", "janitor", "lubridate", "skimr", "readr", "dplyr")
+invisible(lapply(packages, function(x) if (!require(x, character.only = TRUE)) install.packages(x)))
+
+library(tidyverse)
+library(here)
+library(janitor)
+library(lubridate)
+library(skimr)
+library(readr)
+library(dplyr)
+
+**2. Import csv files**  
+
+For analysis we use data for April and May 2016 because this period contains more parameters for assessing trends.
+
+Upload zip file DATA with all 18 cvs files.
+
+Сheck files list and save it in txt format  
+
+```{r}
+library(here)  
+# Get a list of all files in the DATA folder
+file_list <- list.files(path = here("DATA"), full.names = TRUE)
+file_list <- file_list[file.exists(file_list)]
+
+# Print the list of files on the screen
+print(file_list)
+
+# Save the list of files to a text file
+writeLines(file_list, "file_list.txt")
+
+# Load all CSV files into a list, skipping non-existent files
+data_list <- lapply(file_list[file.exists(file_list)], read.csv)
+
+# Assign names to data.frames based on file names
+names(data_list) <- basename(file_list[file.exists(file_list)])
+```
+
+**3. Extract and compare column names**
+
+```{r}
+# Extract column names for each file
+column_names <- lapply(data_list, names)
+
+# Print column names for each file
+for (name in names(column_names)) {
+  cat("Columns in", name, ":\n")
+  print(column_names[[name]])
+  cat("\n")
+}
+```
+**4. Check and select files based on the number of unique IDs**
+
+```{r}
+# Compare column names across all files
+common_columns <- Reduce(intersect, column_names)
+cat("Common columns across all files:\n")
+print(common_columns)
+```
+For all files common column is Id what is unique and represent every user.  
+The size of the sample could potentially introduce a sampling bias. While a sample size of 33 remains valid, a larger sample size would provide a better reflection of the overall population and consequently enhance the confidence interval. 
+To avoid bias, we check all files for the number of Id and select only those that contain information about more than 33 users.
+
+```{r}
+# Function to count the number of unique IDs in a file
+count_unique_ids <- function(file_path) {
+  if (file.exists(file_path)) {
+    print(paste("Processing:", file_path))                                       # Debug: Check the file being processed
+    data <- tryCatch(read_csv(file_path, col_types = cols_only(Id = col_character())),
+                     error = function(e) {
+                       print(paste("Error reading file:", file_path))            # Debug: Log errors
+                       NULL
+                     })
+    if (!is.null(data)) {
+      print(paste("Unique IDs in", file_path, ":", length(unique(data$Id))))     # Debug: Show count
+      return(length(unique(data$Id)))
+    }
+  }
+  return(0)
+}
+
+# Filter files that have more than 33 unique IDs
+files_with_enough_ids <- file_list[sapply(file_list, count_unique_ids) >= 33]
+
+# Print the names of files that meet the condition
+print(files_with_enough_ids)
+```
+
+**5. Merge the datasets containing time-related information**  
+
+After examining the column names,  merging the three datasets containing time-related information into a single dataset using the “Id” and “ActivityHour” columns.
+
+```{r}
+library(dplyr)
+# Load hourly data from three CSV files
+hourly_calories <- read.csv(here("DATA", "hourlyCalories_merged.csv"))           # Data on hourly calorie burn
+hourly_intensities <- read.csv(here("DATA", "hourlyIntensities_merged.csv"))     # Data on hourly activity intensities
+hourly_steps <- read.csv(here("DATA", "hourlySteps_merged.csv"))                 # Data on hourly step counts
+
+# Merge the datasets by 'Id' and 'ActivityHour' columns
+# The result will include only rows with matching 'Id' and 'ActivityHour' across all three datasets
+# Merge with hourly intensities
+merged_hourly_data <- hourly_calories |>
+  inner_join(hourly_intensities, by = c("Id", "ActivityHour")) |>
+  # Merge with hourly steps
+  inner_join(hourly_steps, by = c("Id", "ActivityHour"))                         
+
+# Save the merged dataset as a new CSV file
+write.csv(merged_hourly_data, here("DATA", "hourlyData_merged.csv"), row.names = FALSE)  # Save without row numbers
+
+# Print a message indicating successful merging
+cat("Data merged successfully into 'hourlyData_merged.csv'")
+```
+**7. Convert the various dates and times in 'hourlyData_merged' to the correct format and add DayOfWeek column**  
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(lubridate)
+library(readr)
+library(here)
+
+# Load the raw merged hourly data from the CSV file
+hourly_data_raw <- read.csv(here("DATA", "hourlyData_merged.csv"))
+
+# Convert the 'ActivityHour' column from a character string to a datetime object
+# Using the 'mdy_hms' function from the 'lubridate' package to parse dates in "Month-Day-Year Hour:Minute:Second" format
+hourly_data_raw$ActivityHour <- mdy_hms(hourly_data_raw$ActivityHour)
+
+# Extract the day of the week from the 'ActivityHour' datetime column
+# 'label = TRUE' ensures the result is a factor with day names, and 'abbr = FALSE' ensures full names are used
+hourly_data_raw$DayOfWeek <- wday(hourly_data_raw$ActivityHour, label = TRUE, abbr = FALSE, week_start = 1)
+
+# Display the first few rows of the processed data to verify the transformations
+head(hourly_data_raw)
+
+```
+
+**8. Read and сheck  files with daily data** 
+
+```{r}
+# Reading the files
+daily_activity <- read.csv("DATA/dailyActivity_merged.csv")
+daily_calories <- read.csv("DATA/dailyCalories_merged.csv")
+daily_intensities <- read.csv("DATA/dailyIntensities_merged.csv")
+daily_steps <- read.csv("DATA/dailySteps_merged.csv")
+
+# Display the first 5 rows of each file
+head(daily_activity, 5)
+head(daily_calories, 5)
+head(daily_intensities, 5)
+head(daily_steps, 5)
+
+# View the column names for each file
+colnames(daily_activity)
+colnames(daily_calories)
+colnames(daily_intensities)
+colnames(daily_steps)
+```
+'daily_activity' has all columns from all file data, so chose it for father analyse.  
+
+**9. Convert ActivityDate to Date format Add the DayOfWeek column**  
+
+```{r}
+library(lubridate)
+
+# Convert ActivityDate to Date format if necessary
+daily_activity$ActivityDate <- as.Date(daily_activity$ActivityDate, format = "%m/%d/%Y")
+
+# Add the DayOfWeek column as numeric (1=Sunday, 2=Monday, ..., 7=Saturday)
+daily_activity$DayOfWeek <- wday(daily_activity$ActivityDate, label = FALSE, week_start = 1)
+
+# Convert DayOfWeek to text (1=Sunday, ..., 7=Saturday)
+days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+daily_activity$DayOfWeekText <- days[daily_activity$DayOfWeek]
+
+# View the first 5 rows to confirm the change
+head(daily_activity, 5)
+
+```
+
+**10. Clean data 'hourly_data_row' and 'daily_activity' ** 
+
+1. Check for Missing Values (NA)  
+
+```{r}
+# Check for missing values in the entire dataset
+sum(is.na(daily_activity))   # For daily_activity
+sum(is.na(hourly_data_raw))  # For hourly_data_raw
+
+# Check for missing values per column
+colSums(is.na(daily_activity))
+colSums(is.na(hourly_data_raw))
+
+# Show rows with missing values
+daily_activity[!complete.cases(daily_activity), ]
+hourly_data_raw[!complete.cases(hourly_data_raw), ]
+```
+
+2. Remove or Replace Missing Values  
+
+```{r}
+# Remove rows with missing values
+daily_activity_clean <- na.omit(daily_activity)
+hourly_data_clean <- na.omit(hourly_data_raw)
+
+# Replace missing values with 0 (or another value)
+daily_activity[is.na(daily_activity)] <- 0
+hourly_data_raw[is.na(hourly_data_raw)] <- 0
+```
+
+3. Check for Duplicates  
+
+```{r}
+# Find duplicates
+sum(duplicated(daily_activity))   # For daily_activity
+sum(duplicated(hourly_data_raw))  # For hourly_data_raw
+
+# View duplicate rows
+daily_activity[duplicated(daily_activity), ]
+hourly_data_raw[duplicated(hourly_data_raw), ]
+
+# Remove duplicate rows
+daily_activity <- daily_activity[!duplicated(daily_activity), ]
+hourly_data_raw <- hourly_data_raw[!duplicated(hourly_data_raw), ]
+```
+
+4. Check Data Types and Correct Formats 
+
+```{r}
+# Check the structure of the dataset
+str(daily_activity)
+str(hourly_data_raw)
+
+# Convert columns to correct data types (example for date format)
+daily_activity$ActivityDate <- as.Date(daily_activity$ActivityDate, format = "%m/%d/%Y")
+hourly_data_raw$ActivityHour <- as.POSIXct(hourly_data_raw$ActivityHour, format = "%m/%d/%Y %I:%M:%S %p", tz = "UTC")
+```
+
+5. Check for Outliers or Unusual Values  
+
+```{r}
+# Summary statistics to detect outliers
+summary(daily_activity)
+summary(hourly_data_raw)
+
+# Boxplot to visualize outliers
+boxplot(daily_activity$Calories, main = "Calories in daily_activity")
+boxplot(hourly_data_raw$Calories, main = "Calories in hourly_data_raw")
+
+```
+
+6. Handle Invalid Formats  
+
+```{r}
+# Convert columns to numeric if necessary
+daily_activity$Calories <- as.numeric(daily_activity$Calories)
+hourly_data_raw$Calories <- as.numeric(hourly_data_raw$Calories)
+
+# Handle non-numeric values (e.g., replace non-numeric values with NA)
+daily_activity$Calories[is.na(daily_activity$Calories)] <- 0
+hourly_data_raw$Calories[is.na(hourly_data_raw$Calories)] <- 0
+
+```
+
+7. Check for Invalid Date Formats  
+
+```{r}
+# Convert to Date format
+daily_activity$ActivityDate <- as.Date(daily_activity$ActivityDate, format = "%m/%d/%Y")
+hourly_data_raw$ActivityHour <- as.POSIXct(hourly_data_raw$ActivityHour, format = "%m/%d/%Y %I:%M:%S %p")
+
+```
+
+8. Check for Zero or Negative Values in Numeric Columns  
+
+```{r}
+# Check for zero or negative values in specific columns
+sum(daily_activity$Calories <= 0)
+sum(hourly_data_raw$Calories <= 0)
+```
+
+check 4 rows where colories <= 0
+
+```{r}
+# Filter rows where Calories <= 0
+invalid_calories <- daily_activity[daily_activity$Calories <= 0, ]
+
+# View the filtered rows
+print(invalid_calories)
+```
+we see any activities in other columns, so it should be removed.
+
+```{r}
+daily_activity <- daily_activity[daily_activity$Calories > 0, ]
+
+```
+
+
+**11. Rename the dataframe from hourly_data_raw to hourly_activity**    
+
+```{r}
+# Rename the dataframe from hourly_data_raw to hourly_activity
+hourly_activity <- hourly_data_raw
+```
+
+**12. Export the data to CSV format for use in Tableau**  
+
+```{r}
+write.csv(daily_activity, "daily_activity_cleaned.csv", row.names = FALSE)
+write.csv(hourly_activity, "hourly_activity_cleaned.csv", row.names = FALSE)
+```
+

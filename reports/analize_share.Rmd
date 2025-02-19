@@ -1,0 +1,101 @@
+---
+title: "ANALYZE/SHARE"
+author: "YEVGENIIA"
+date: "2024-12-22"
+output:
+  word_document: default
+  html_document: default
+---
+
+For data analysis used Tableau’s functions to perform quick calculations.
+
+
+### 1. The correlation between the number of steps and the calories burned by the users. 
+
+Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/STEPSvsCOLORIES.png")
+
+```
+
+### 2. Activity Trends Across Days of the Week.  
+
+Sedentary activity dominates overall, peaking on Mondays (151,679 minutes) and reaching its lowest on Fridays. Other activity types follow a similar weekly pattern.
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet2
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/ACTIVESvsDAYofWEEK.png")
+```
+
+### 3. Correlation Between Steps and Activity Types.   
+
+A negative trend is observed for sedentary activity, meaning that more steps result in fewer sedentary minutes. In contrast, lightly active, fairly active, and highly active trends are positive, indicating that higher-intensity activities require less time to accumulate steps.
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/STEPSvsACTIVES.png")
+
+```
+
+### 4. Steps Count Across the Week.  
+
+Step count is highest on Mondays (1,235,001 steps) and gradually declines throughout the week. A slight increase occurs on Fridays, while the lowest step counts are observed on weekends, likely due to reduced work-related movement.
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsDAYofWEEK
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/STEPSvsDAYofWEEK.png")
+```
+
+### 5. Activity Levels by Hour of the Day.  
+
+The most active period spans from 8 AM to 8 PM, with peak activity occurring during lunch breaks (12 PM) and after work (5-7 PM).
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet5
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/INTENSITYvsACTIVETYhOUR.png")
+```
+
+### 6. Hourly Activity Patterns on Weekends vs. Weekdays.  
+
+On weekends, activity levels shift, with increased movement from midnight to 3 AM and reduced engagement between 5 PM and 7 PM.
+
+https://public.tableau.com/views/Bellabeat_viz_17327147322200/INTENSITYvsACTIVETYhOURinWEEK
+
+```{r, echo=FALSE, cache=FALSE}
+knitr::include_graphics("images/vizTableau/INTENSITYvsACTIVETYhOURinWEEK.png")
+
+```
+
+## Act.  
+
+It’s important to emphasize that the collected data is from a limited sample, and the demographic information of the users is not taken into account.
+
+Recommendations for Bellabeat based on data analysis
+
+**1. Smart Activity Reminders**
+Bellabeat can send users reminders during peak activity hours. If the daily calorie goal has not yet been reached, the app will encourage additional exercise, helping users stay in shape.
+
+**2. Personalized Sleep Recommendations**
+Based on the user's average wake-up time, Bellabeat can suggest the optimal bedtime. These personalized notifications will help improve sleep quality and maintain energy levels throughout the day.
+
+**3. Flexible Workout Programs**
+Bellabeat can adapt workouts to users' lifestyles. For example, it could suggest lighter exercises on weekdays and more intense workouts on weekends. This approach allows users to maintain regular physical activity while considering their schedules and preferences.
+
+**4. Gamification for Motivation**
+To increase engagement, Bellabeat can introduce an achievement system: the more goals (daily, weekly, monthly) a user reaches, the more points they earn. These points can be redeemed for discounts on sports products and other valuable rewards, making fitness a fun and rewarding experience.
+
+**5. Personalized Reports and Analytics**
+Developing an app with detailed reports and analytical tools will allow users to better understand their progress and receive personalized recommendations to achieve their goals.
+
+**6. Customized Nutrition and Workout Plans**
+Bellabeat can create personalized nutrition and workout plans based on user data. Diet and activity levels will be automatically adjusted according to daily physical activity, helping users maintain balance and achieve their fitness goals.
+
+**7. Partnerships for a Healthier Lifestyle**  
+Developing partnership programs with fitness clubs, dance studios, and nutritionists. User data from devices will help partners create personalized and more effective programs for their clients, promoting a healthy lifestyle.
