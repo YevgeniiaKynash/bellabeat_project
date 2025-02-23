@@ -103,3 +103,18 @@ On weekends, activity levels shift, with increased movement from midnight to 3 A
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/INTENSITYvsACTIVETYhOURinWEEK)  
 ![INTENSITYvsACTIVETYhOURinWEEK](visualizations/INTENSITYvsACTIVETYhOURinWEEK.png)
+
+## Recommendations
+
+It’s important to emphasize that the collected data is from a limited sample, and the demographic information of the users is not taken into account.  
+
+**Recommendations for Bellabeat based on data analysis**
+
+**1. Smart Activity Reminders** Bellabeat can send users reminders during peak activity hours. If the daily calorie goal has not yet been reached, the app will encourage additional exercise, helping users stay in shape.  
+**2. Personalized Sleep Recommendations** Based on the user’s average wake-up time, Bellabeat can suggest the optimal bedtime. These personalized notifications will help improve sleep quality and maintain energy levels throughout the day.  
+**3. Flexible Workout Programs** Bellabeat can adapt workouts to users’ lifestyles. For example, it could suggest lighter exercises on weekdays and more intense workouts on weekends. This approach allows users to maintain regular physical activity while considering their schedules and preferences.  
+**4. Gamification for Motivation** To increase engagement, Bellabeat can introduce an achievement system: the more goals (daily, weekly, monthly) a user reaches, the more points they earn. These points can be redeemed for discounts on sports products and other valuable rewards, making fitness a fun and rewarding experience.  
+**5. Personalized Reports and Analytics Developing** an app with detailed reports and analytical tools will allow users to better understand their progress and receive personalized recommendations to achieve their goals.  
+**6. Customized Nutrition and Workout Plans** Bellabeat can create personalized nutrition and workout plans based on user data. Diet and activity levels will be automatically adjusted according to daily physical activity, helping users maintain balance and achieve their fitness goals.  
+**7. Partnerships for a Healthier Lifestyle**Developing partnership programs with fitness clubs, dance studios, and nutritionists. User data from devices will help partners create personalized and more effective programs for their clients, promoting a healthy lifestyle.  
+
