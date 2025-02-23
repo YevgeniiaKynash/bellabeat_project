@@ -59,13 +59,15 @@ FitBit Fitness Tracker data represents a unique and reliable source of informati
 ## Project stracture
 ```bash
 bellabeat_project/
+
 ├── README.md           # project description
 ├── data/               # data fils (CSV)
 ├── reports/            # RMarkdown and HTML reports
 ├── visualizations/     # visaulisations
 
-## 1. The correlation between the number of steps and the calories burned by the users.    
+**Conclusions**  
+**1. The correlation between the number of steps and the calories burned by the users.** 
+
 Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
 
-https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1
-
+[View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
