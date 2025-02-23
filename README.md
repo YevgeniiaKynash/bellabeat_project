@@ -1,6 +1,7 @@
 # bellabeat_project
 ## About the company 
 Urška Sršen and Sando Mur founded Bellabeat, a high-tech company that manufactures health-focused smart products. Sršen used her background as an artist to develop beautifully designed technology that informs and inspires women around the world.
+
 ## Task
 To analyze smart device usage data in order to gain insight into how consumers use non-Bellabeat smart devices
 To select one Bellabeat product 
@@ -84,3 +85,9 @@ A negative trend is observed for sedentary activity, meaning that more steps res
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES)
 ![STEPSvsACTIVES](visualizations/STEPSvsACTIVES.png)
+
+### 4. Steps Count Across the Week.
+Step count is highest on Mondays (1,235,001 steps) and gradually declines throughout the week. A slight increase occurs on Fridays, while the lowest step counts are observed on weekends, likely due to reduced work-related movement.  
+
+[View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsDAYofWEEK)
+![STEPSvsDAYofWEEK](visualizations/STEPSvsDAYofWEEK.png)
