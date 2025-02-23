@@ -31,17 +31,17 @@ The data organized in wide format.
 
 ## ROCCC analysis for the FitBit Fitness Tracker data
 **1. Reliability**
-The data is obtained from the FitBit device, which is widely used for monitoring physical activity. However, there may be measurement errors due to sensor inaccuracies or incorrect device usage. It's also important to consider that the data may be incomplete due to missed days or lack of synchronization.
+The data is obtained from the FitBit device, which is widely used for monitoring physical activity. However, there may be measurement errors due to sensor inaccuracies or incorrect device usage. It's also important to consider that the data may be incomplete due to missed days or lack of synchronization.  
 **2. Originality**
-The data is unique in the sense that it is collected individually for each user. It is primary data that has not undergone significant processing or transformation prior to publication. It is the primary data
+The data is unique in the sense that it is collected individually for each user. It is primary data that has not undergone significant processing or transformation prior to publication. It is the primary data.  
 **3. Comprehensiveness**
-The data includes various aspects of physical activity, such as step count, heart rate, activity level, sleep, etc. However, it may lack important contextual information (e.g., users' health status or lifestyle), which could limit the depth of analysis.
+The data includes various aspects of physical activity, such as step count, heart rate, activity level, sleep, etc. However, it may lack important contextual information (e.g., users' health status or lifestyle), which could limit the depth of analysis.  
 **4. Consistency**
-The data is likely consistent in terms of time and format since it is automatically collected by the device. However, inconsistencies may arise due to missing data or changes in user behavior while wearing the device (e.g., if the user forgets to wear it).
+The data is likely consistent in terms of time and format since it is automatically collected by the device. However, inconsistencies may arise due to missing data or changes in user behavior while wearing the device (e.g., if the user forgets to wear it).  
 **5. Curation**
-The data is available in its raw form, with minimal processing. This is good for maintaining originality but may require significant preprocessing and cleaning before analysis. It is important to account for possible data gaps and anomalies.
+The data is available in its raw form, with minimal processing. This is good for maintaining originality but may require significant preprocessing and cleaning before analysis. It is important to account for possible data gaps and anomalies.  
 **Conclusion:**
-FitBit Fitness Tracker data represents a unique and reliable source of information on users' physical activity. However, to obtain accurate results, careful data cleaning is necessary, along with consideration of possible measurement errors and contextual limitations.
+FitBit Fitness Tracker data represents a unique and reliable source of information on users' physical activity. However, to obtain accurate results, careful data cleaning is necessary, along with consideration of possible measurement errors and contextual limitations.  
 
  When working with FitBit Fitness Tracker Data, it is crucial to address several key aspects, including licensing, privacy, security, accessibility, and data integrity.
 
@@ -57,7 +57,7 @@ FitBit Fitness Tracker data represents a unique and reliable source of informati
 **Tableau:** visualisations
 
 ## Project stracture
-```bash
+bash
 bellabeat_project/
 
 ├── README.md           # project description
@@ -65,9 +65,4 @@ bellabeat_project/
 ├── reports/            # RMarkdown and HTML reports
 ├── visualizations/     # visaulisations
 
-**Conclusions**  
-**1. The correlation between the number of steps and the calories burned by the users.** 
 
-Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
-
-[View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
