@@ -91,3 +91,9 @@ Step count is highest on Mondays (1,235,001 steps) and gradually declines throug
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsDAYofWEEK)
 ![STEPSvsDAYofWEEK](visualizations/STEPSvsDAYofWEEK.png)
+
+### 5. Activity Levels by Hour of the Day.
+The most active period spans from 8 AM to 8 PM, with peak activity occurring during lunch breaks (12 PM) and after work (5-7 PM).  
+
+[View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet5)
+![INTENSITYvsACTIVEYhOUR](visualizations/INTENSITYvsACTIVEYhOUR.png)
