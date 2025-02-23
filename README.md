@@ -60,9 +60,9 @@ FitBit Fitness Tracker data represents a unique and reliable source of informati
 bash
 bellabeat_project/
 
-├── README.md           # project description
-├── data/               # data fils (CSV)
-├── reports/            # RMarkdown and HTML reports
-├── visualizations/     # visaulisations
+├── README.md           # project description  
+├── data/               # data fils (CSV)  
+├── reports/            # RMarkdown and HTML reports  
+├── visualizations/     # visaulisations  
 
 
