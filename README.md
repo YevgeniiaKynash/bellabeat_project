@@ -57,22 +57,14 @@ FitBit Fitness Tracker data represents a unique and reliable source of informati
 **Tableau:** visualisations
 
 ## Project stracture
-bash
+```bash
 bellabeat_project/
 
 ├── README.md            # project description  
 ├── data/                # data fils (CSV)  
 ├── reports/             # RMarkdown and HTML reports  
-├── visualizations/      # visaulisations  
-
-bellabeat_project/
-├── README.md           # Описание проекта
-├── data/               # Данные (CSV)
-├── reports/            # RMarkdown и HTML отчёты
-├── visualizations/     # Графики и дашборды
-
-
-
+├── visualizations/      # visaulisations    
+```
 
 ### 1. The correlation between the number of steps and the calories burned by the users. 
 
