@@ -65,9 +65,10 @@ bellabeat_project/
 ├── reports/             # RMarkdown and HTML reports  
 ├── visualizations/      # visaulisations    
 ```
-
+## Data Insights
 ### 1. The correlation between the number of steps and the calories burned by the users. 
 
 Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
+![STEPSvsCOLORIES](visualizations/STEPSvsCOLORIES.png)
