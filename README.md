@@ -47,11 +47,11 @@ FitBit Fitness Tracker data represents a unique and reliable source of informati
  When working with FitBit Fitness Tracker Data, it is crucial to address several key aspects, including licensing, privacy, security, accessibility, and data integrity.
 
 ### Actions:
-**Addressing Licensing:** attributed the source of the data appropriately in documentation.
-**Addressing Privacy:** implemented anonymization techniques, such as removing user IDs or aggregating data, to ensure that individual users cannot be identified from the dataset.
-**Addressing Security:** stored the data in secure, encrypted environments with access controls in place. Used secure methods for transferring data and ensured that any sharing of data is done in compliance with security protocols.
-**Addressing Accessibility:**  offered the data in multiple formats (e.g., CSV, Excel) and ensured that tools used for analysis are compliant with accessibility standards, such as WCAG (Web Content Accessibility Guidelines).
-**Verifying Data Integrity:** implemented data validation procedures, such as checking for missing values, duplicates, and outliers. Used checksum or hash functions to ensure that data has not been altered during transfer. Cross-validate with other data sources or documentation to confirm accuracy.
+**Addressing Licensing:** attributed the source of the data appropriately in documentation.  
+**Addressing Privacy:** implemented anonymization techniques, such as removing user IDs or aggregating data, to ensure that individual users cannot be identified from the dataset.  
+**Addressing Security:** stored the data in secure, encrypted environments with access controls in place. Used secure methods for transferring data and ensured that any sharing of data is done in compliance with security protocols.  
+**Addressing Accessibility:**  offered the data in multiple formats (e.g., CSV, Excel) and ensured that tools used for analysis are compliant with accessibility standards, such as WCAG (Web Content Accessibility Guidelines).  
+**Verifying Data Integrity:** implemented data validation procedures, such as checking for missing values, duplicates, and outliers. Used checksum or hash functions to ensure that data has not been altered during transfer. Cross-validate with other data sources or documentation to confirm accuracy.  
 
 ## Tehnology used
 **R:** "tidyverse", "here", "janitor", "lubridate", "skimr", "readr", "dplyr"  
