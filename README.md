@@ -97,3 +97,9 @@ The most active period spans from 8 AM to 8 PM, with peak activity occurring dur
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet5)  
 ![INTENSITYvsACTIVETYhOUR](visualizations/INTENSITYvsACTIVETYhOUR.png)
+
+### 6. Hourly Activity Patterns on Weekends vs. Weekdays.
+On weekends, activity levels shift, with increased movement from midnight to 3 AM and reduced engagement between 5 PM and 7 PM.  
+
+[View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/INTENSITYvsACTIVETYhOURinWEEK)  
+![INTENSITYvsACTIVETYhOURinWEEK](visualizations/INTENSITYvsACTIVETYhOURinWEEK.png)
