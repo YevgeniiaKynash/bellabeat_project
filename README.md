@@ -72,7 +72,7 @@ bellabeat_project/
 Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
-![STEPSvsCOLORIES](./visualizations/STEPSvsCOLORIES.png)
+![STEPSvsCOLORIES](visualizations/STEPSvsCOLORIES.png)
 
 
 ### 2. Activity Trends Across Days of the Week.
