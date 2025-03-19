@@ -72,40 +72,37 @@ bellabeat_project/
 Analysis reveals a positive correlation between the number of steps taken and calories burned. The more active the user, the higher the calorie expenditure.
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
-![STEPSvsCOLORIES](visualizations/STEPSvsCOLORIES.png)
 ![STEPSvsCOLORIES](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/STEPSvsCOLORIES.png)
-
-
 
 ### 2. Activity Trends Across Days of the Week.
 Sedentary activity dominates overall, peaking on Mondays (151,679 minutes) and reaching its lowest on Fridays. Other activity types follow a similar weekly pattern.  
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet2)
-![ACTIVESvsDAYofWEEK](visualizations/ACTIVESvsDAYofWEEK.png)
+![ACTIVESvsDAYofWEEK](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/ACTIVESvsDAYofWEEK.png)
 
 ### 3. Correlation Between Steps and Activity Types.
 A negative trend is observed for sedentary activity, meaning that more steps result in fewer sedentary minutes. In contrast, lightly active, fairly active, and highly active trends are positive, indicating that higher-intensity activities require less time to accumulate steps.  
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES)
-![STEPSvsACTIVES](visualizations/STEPSvsACTIVES.png)
+![STEPSvsACTIVES](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/STEPSvsACTIVES.png)
 
 ### 4. Steps Count Across the Week.
 Step count is highest on Mondays (1,235,001 steps) and gradually declines throughout the week. A slight increase occurs on Fridays, while the lowest step counts are observed on weekends, likely due to reduced work-related movement.  
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsDAYofWEEK)  
-![STEPSvsDAYofWEEK](visualizations/STEPSvsDAYofWEEK.png)
+![STEPSvsDAYofWEEK](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/STEPSvsDAYofWEEK.png)
 
 ### 5. Activity Levels by Hour of the Day.
 The most active period spans from 8 AM to 8 PM, with peak activity occurring during lunch breaks (12 PM) and after work (5-7 PM).  
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/Sheet5)  
-![INTENSITYvsACTIVETYhOUR](visualizations/INTENSITYvsACTIVETYhOUR.png)
+![INTENSITYvsACTIVETYhOUR](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/INTENSITYvsACTIVETYhOUR.png)
 
 ### 6. Hourly Activity Patterns on Weekends vs. Weekdays.
 On weekends, activity levels shift, with increased movement from midnight to 3 AM and reduced engagement between 5 PM and 7 PM.  
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/INTENSITYvsACTIVETYhOURinWEEK)  
-![INTENSITYvsACTIVETYhOURinWEEK](visualizations/INTENSITYvsACTIVETYhOURinWEEK.png)
+![INTENSITYvsACTIVETYhOURinWEEK](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/INTENSITYvsACTIVETYhOURinWEEK.png)
 
 ## Recommendations
 
