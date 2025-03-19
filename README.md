@@ -73,6 +73,7 @@ Analysis reveals a positive correlation between the number of steps taken and ca
 
 [View on Tableau Public](https://public.tableau.com/views/Bellabeat_viz_17327147322200/STEPSvsCOLORIES_1)
 ![STEPSvsCOLORIES](visualizations/STEPSvsCOLORIES.png)
+![STEPSvsCOLORIES](https://raw.githubusercontent.com/yevgeniiakynash/bellabeat_project/main/visualizations/STEPSvsCOLORIES.png)
 
 
 
