@@ -3,9 +3,9 @@
 Urška Sršen and Sando Mur founded Bellabeat, a high-tech company that manufactures health-focused smart products. Sršen used her background as an artist to develop beautifully designed technology that informs and inspires women around the world.
 
 ## Task
-To analyze smart device usage data in order to gain insight into how consumers use non-Bellabeat smart devices
-To select one Bellabeat product 
-To apply insights in presentation. 
+To analyze smart device usage data in order to gain insight into how consumers use non-Bellabeat smart devices.  
+To select one Bellabeat product.   
+To apply insights in presentation.   
 
 ## Key stakeholders
 UrškaSršen: Bellabeat’s cofounder and Chief Creative Officer 
